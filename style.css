@@ -1,0 +1,310 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    /* font-family: 'Montserrat', sans-serif; */
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #F2F2F2;
+}
+
+#frame {
+    width: 1100px;
+    min-height: 100vh;
+    /* margin: 0 auto; */
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow: hidden;
+    padding: 0 0 30px 0;
+}
+
+.container {
+    padding: 20px;
+    border-radius: 12px;
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    float: left;
+    margin: 30px 0 0 0;
+}
+
+.hiddenCont {
+    opacity: 0;
+}
+
+.visibleCont {
+    opacity: 1;
+}
+
+
+/* logo styling */
+
+#svg {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    fill: transparent;
+    z-index: 5;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+@keyframes svg-line {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes svg-out {
+    to {
+        opacity: 0;
+    }
+}
+
+span {
+    display: block;
+}
+
+.sidebar {
+    width: 300px;
+    float: left;
+    overflow: hidden;
+}
+
+@keyframes sidebar-anim {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.profile img {
+    margin-bottom: 10px;
+}
+
+img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+#social {
+    width: 100%;
+    display: flex;
+    /* justify-content: space-between;
+    flex-direction: unset; */
+}
+
+#social img {
+    height: 70px;
+    width: auto;
+    cursor: pointer;
+    margin: 0 10px 0 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.bold,
+.extraBold {
+    font-size: 16;
+    font-weight: 600;
+    color: #4F4F4F;
+}
+
+.rich {
+    font-size: 14;
+    font-weight: 500;
+    color: #828282;
+}
+
+.mini {
+    font-size: 12;
+    font-weight: 500;
+    color: #828282;
+    line-height: 1.3rem;
+}
+
+.spacing {
+    margin: 0 0 20px 0;
+}
+
+.experience {
+    padding-bottom: 0;
+}
+
+.main {
+    width: 780px;
+    float: right;
+}
+
+.sub-main {
+    width: 380px;
+    float: right;
+    margin: 30px 0 0 20px;
+    padding: 15px;
+}
+
+.title {
+    margin: 0 0 20px 0;
+    color: #828282;
+    font-size: 16;
+    font-weight: 600;
+}
+
+.skill {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.bar {
+    width: 70%;
+    height: 6px;
+    background-color: #C4C4C4;
+    border-radius: 3px;
+}
+
+#node,
+#express,
+#python,
+#ajax,
+#js,
+#react,
+#html,
+#css {
+    height: 6px;
+    background-color: #2F80ED;
+    opacity: 70%;
+    border-radius: 3px;
+    transition: all 2s ease;
+}
+
+#node,
+#express,
+#react,
+#ajax {
+    width: 0%;
+}
+
+#python,
+#js,
+#html,
+#css {
+    width: 0%;
+}
+
+#cat-node,
+#cat-javascript,
+#cat-react {
+    color: #4F4F4F;
+    font-size: 14px;
+    padding: 5px 15px;
+    display: inline;
+    margin: 0 20px 20px 0;
+    border-radius: 5px;
+    border: solid 1px #4F4F4F;
+    cursor: pointer;
+}
+
+.project {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    height: 350px;
+    flex-direction: unset;
+    position: relative;
+}
+
+.project img {
+    width: unset;
+    height: 100%;
+    margin: 0 20px 0 0;
+}
+
+.tags {
+    display: flex;
+    margin: 0 0 20px 0;
+}
+
+.tags>div {
+    margin: 0 10px 0 0;
+}
+
+.buttons {
+    width: 100%;
+    display: flex;
+    position: absolute;
+    bottom: 20px;
+}
+
+button {
+    padding: 5px 25px;
+    color: white;
+    background-color: #5C94E1;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    margin: 0 30px 0 0;
+    cursor: pointer;
+    outline: none;
+}
+
+.code {
+    color: #5C94E1;
+    background-color: white;
+    border: solid 1px #5C94E1;
+}
+
+input,
+textarea {
+    width: 100%;
+    margin: 5px 0 20px 0;
+    border: solid 1px #C4C4C4;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 14;
+    color: #4F4F4F;
+}
+
+@media only screen and (max-width: 900px) {
+    .sidebar,
+    #frame,
+    .main,
+    .sub-main {
+        width: 90%;
+        margin: 20px auto 0 auto;
+    }
+    .project {
+        display: unset;
+        height: auto;
+    }
+    .project img {
+        width: 100%;
+        height: auto;
+        margin: 0 0 10px 0;
+    }
+    .project .buttons {
+        position: relative;
+        bottom: unset;
+        margin: 20px 0;
+    }
+    .projects:after {
+        visibility: hidden;
+        display: block;
+        font-size: 0;
+        content: " ";
+        clear: both;
+        height: 0;
+        margin: 0 auto 20px auto;
+    }
+    .container {
+        transition: all 0.5s ease;
+    }
+}
